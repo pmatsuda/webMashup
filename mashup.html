@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mashup</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css"/>        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <script src="https://www.google.com/maps/api/js?sensor=false"></script>
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript" src="js/PieChart.js"></script>
+    </head>
+    <body>
+        <!-- Carousel -->
+        <div id="imgCarousel" class="carousel slide" data-ride="imgCarousel">
+            <ul class="carousel-indicators">
+                <li data-target="#imgCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#imgCarousel" data-slide-to="1"></li>
+                <li data-target="#imgCarousel" data-slide-to="2"></li>
+                <li data-target="#imgCarousel" data-slide-to="3"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" style="height: 600px;" src="img/blue-rose.jpeg" />
+                    <div class="carousel-caption">
+                        <h1>Rose</h1>
+                        <p>Blue roses are often used to symbolize secret or unattainable love</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Blue_rose" class="btn btn-lg btn-primary" target="_blank">Find out more</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" style="height: 600px;" src="img/dahlia.jpg" />
+                    <div class="carousel-caption">
+                        <h1>Dahlia</h1>
+                        <p>Dahlia represents dignity and stability, it also means my gratitude exceeds you care</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Dahlia" class="btn btn-lg btn-primary" target="_blank">Find out more</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" style="height: 600px;" src="img/purple-daisy.jpg" />
+                    <div class="carousel-caption">
+                        <h1>Daisy</h1>
+                        <p>Daisy symbolizes innocence</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Bellis_perennis" class="btn btn-lg btn-primary" target="_blank">Find out more</a></p>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" style="height: 600px;" src="img/tulip.jpg" />
+                    <div class="carousel-caption">
+                        <h1>Tulip</h1>
+                        <p>In Christianity, tulips symbolizes passion, belief and love, especially white tulip which represents forgiveness</p>
+                        <p><a href="https://en.wikipedia.org/wiki/Tulip" class="btn btn-lg btn-primary" target="_blank">Find out more</a></p>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#imgCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#imgCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+        <br><br>
+
+        <!-- Google chart section -->
+        <div class="container">
+            <h1>Using Google API to Show Pie Charts</h1>
+            <div id="pieChart"></div>
+        </div>
+        <br><br>
+
+        <!-- Google maps section -->
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Using Google Maps API</h1><br>
+                    <div class="mapouter">
+                        <div class="gmap_canvas"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2970.612119833234!2d-87.63653178472637!3d41.87969107329387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2cbebbbc2af7%3A0x43d65b9362e693fc!2sMicrotrain!5e0!3m2!1sen!2sus!4v1576549551104!5m2!1sen!2sus" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
