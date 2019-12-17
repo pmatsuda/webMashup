@@ -1,0 +1,65 @@
+h1{
+    text-shadow: 1px 1px 1px #00F0FF;
+}
+.new_font{
+    font-size: 18px;
+    font-family: newFont;
+    color: navy;
+}
+img{
+    top: 200px;
+    height: 100px;
+    width: 200px;
+}
+#img1{
+    position: absolute;
+    left: 100px;
+    -webkit-transform: rotate(30deg);
+}
+
+#img2{
+    position: absolute;
+    left: 300px;
+    -webkit-transform: rotate(60deg);
+}
+
+#img3{
+    position: absolute;
+    left: 500px;
+    -webkit-transform: rotate(30deg);
+}
+
+#img4{
+    position: absolute;
+    left: 700px;
+    -webkit-transform: rotate(60deg);
+}
+
+#img5{
+    position: absolute;
+    left: 900px;
+    -webkit-transform: rotate(30deg);
+}
+
+#rImg1{
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    height: 150px;
+    width: 300px;
+    transform: rotateY(30deg);
+}
+
+#rImg2{
+    position: absolute;
+    left: 400px;
+    top: 100px;
+    height: 150px;
+    width: 300px;
+    transform: rotateY(180deg);
+}
+
+#transform {
+    position: absolute;
+    top: 400px;
+}
