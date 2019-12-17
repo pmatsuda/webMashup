@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Quiz</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="dist/css/ProjectCss.css" rel="stylesheet">
+        <script type="text/javascript" src="https://code.jquery.com/jquery-git.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.10.2.js"></script>
+        <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Quiz</h1>
+        </header>
+        <div id="quizContainer">
+            <form id="quizzes">
+                <div class="quiz">
+                    <p id="question1">Which one is NOT true about Browser Object Model (BOM)?</p>
+                    <input type="radio" name="ans1" value="1" />
+                    <span id="q1a1">Browser objects are local</span>
+                    <br>
+                    <input type="radio" name="ans1" value="0" />
+                    <span id="q1a2">BOM is available throughout the Javascript code</span>
+                    <br>
+                    <input type="radio" name="ans1" value="0" />
+                    <span id="q1a3">A BOM window object represents the browser window</span>
+                    <br><br>
+                </div>
+                <div class="quiz">
+                    <p id="question2">Below are types of built in Javascript error objects EXCEPT:</p> 
+                    <input type="radio" name="ans2" value="0" />
+                    <span id="q2a1">SyntaxError</span>
+                    <br>
+                    <input type="radio" name="ans2" value="0" />
+                    <span id="q2a2">URIError</span>
+                    <br>
+                    <input type="radio" name="ans2" value="1" />
+                    <span id="q2a3">ObjectError</span>
+                    <br><br>
+                </div>
+                <div class="quiz">
+                    <p id="question3">Which one is NOT true about Browser Object Model (BOM)?</p> 
+                    <input type="radio" name="ans3" value="0" />
+                    <span id="q3a1">Browser objects are local</span>
+                    <br>
+                    <input type="radio" name="ans3" value="0" />
+                    <span id="q3a2">BOM is available throughout the Javascript code</span>
+                    <br>
+                    <input type="radio" name="ans3" value="1" />
+                    <span id="q3a3">A BOM window object represents the browser window</span>
+                    <br><br>
+                </div>
+                <div class="quiz">
+                    <p id="question4">jQuery is a library of Java functions?</p> 
+                    <input type="radio" name="ans4" value="0" />
+                    <span id="q4a1">True</span>
+                    <br>
+                    <input type="radio" name="ans4" value="1" />
+                    <span id="q4a2">False</span>
+                    <br>
+                </div>
+                <br><br>
+                <input id="button" type="button" value="Submit" onclick="checkAnswer()" disabled="disabled" />
+            </form>
+        </div>        
+        <div id="done">           
+            <p id="score">Current score: 0</p>
+        </div>
+        <script>
+            var correctCount = 0, total = 4, pComplete = 0, grade = 0;
+            var ans1 = 0, ans2 = 0, ans3 = 0, ans4 = 0;
+
+            if ($("input[name='ans1']").change(function () {
+                if (ans1 === 0)
+                {
+                    checkAllAnswered(1);
+                    ans1 = 1;
+                }
+            }))
+                ;
+
+            if ($("input[name='ans2']").change(function () {
+                if (ans2 === 0)
+                {
+                    checkAllAnswered(1);
+                    ans2 = 1;
+                }
+
+            }))
+                ;
+
+            if ($("input[name='ans3']").change(function () {
+                if (ans3 === 0)
+                {
+                    checkAllAnswered(1);
+                    ans3 = 1;
+                }
+            }))
+                ;
+
+            if ($("input[name='ans4']").change(function () {
+                if (ans4 === 0)
+                {
+                    checkAllAnswered(1);
+                    ans4 = 1;
+                }
+            }))
+                ;
+
+            function checkAllAnswered(counter)
+            {
+                pComplete += counter;
+                if (pComplete === 4)
+                    $('#button').prop('disabled', false);
+            }
+
+            function checkAnswer() {
+                if ($("input[name='ans1']:checked").val() === '1')
+                {
+                    correctCount += ans1;
+                    $("input[name='ans1']:checked").next().css('color', 'yellow');
+                }
+                else
+                {
+                    $("input[name='ans1']:checked").next().css('color', 'red');
+                }
+
+                if ($("input[name='ans2']:checked").val() === '1')
+                {
+                    correctCount += ans2;
+                    $("input[name='ans2']:checked").next().css('color', 'yellow');
+                }
+                else
+                {
+                    $("input[name='ans2']:checked").next().css('color', 'red');
+                }
+
+                if ($("input[name='ans3']:checked").val() === '1')
+                {
+                    correctCount += ans3;
+                    $("input[name='ans3']:checked").next().css('color', 'yellow');
+                }
+                else
+                {
+                    $("input[name='ans3']:checked").next().css('color', 'red');
+                }
+
+
+                if ($("input[name='ans4']:checked").val() === '1')
+                {
+                    correctCount += ans4;
+                    $("input[name='ans4']:checked").next().css('color', 'yellow');
+                }
+                else
+                {
+                    $("input[name='ans4']:checked").next().css('color', 'red');
+                }
+                
+                document.getElementById("done").style.visibility = "visible";
+                grade = ((correctCount / total) * 100);
+                document.getElementById("score").innerHTML = correctCount + " correct out of " + total + " total answers\nScore: " + grade.toFixed(0);
+      
+                if(grade >= 90)
+                    document.getElementById("results").src = "images/smile.JPG";
+                else if (grade >= 50)
+                    document.getElementById("results").src = "images/neutral.JPG";
+                else
+                    document.getElementById("results").src = "images/sad.JPG";
+            }
+            ;
+
+        </script>
+    </body>
+</html>
